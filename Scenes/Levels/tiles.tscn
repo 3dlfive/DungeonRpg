@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy6k2ql16nmcn"]
+
+[ext_resource type="PackedScene" uid="uid://b7m4xbqhq4rmw" path="res://Assets/Models/Dungeon/gltf/floor_tile_small.gltf.glb" id="1_suj0x"]
+[ext_resource type="PackedScene" uid="uid://bdimk3f0t245v" path="res://Assets/Models/Dungeon/gltf/wall.gltf.glb" id="2_ahqp7"]
+[ext_resource type="PackedScene" uid="uid://bxay84n8ynbk4" path="res://Assets/Models/Dungeon/gltf/stairs_wood_decorated.gltf.glb" id="3_lxss2"]
+[ext_resource type="PackedScene" uid="uid://t1uuoxm8k8c5" path="res://Assets/Models/Dungeon/gltf/wall_corner.gltf.glb" id="4_a3vq1"]
+[ext_resource type="PackedScene" uid="uid://cfsd8bu1xr6ey" path="res://Assets/Models/Dungeon/gltf/wall_Tsplit.gltf.glb" id="5_j6tdu"]
+[ext_resource type="PackedScene" uid="uid://df11fnfyhpxg3" path="res://Assets/Models/Dungeon/gltf/wall_open_scaffold.gltf.glb" id="6_umbcl"]
+[ext_resource type="PackedScene" uid="uid://d2lyqp5cpkw1e" path="res://Assets/Models/Dungeon/gltf/wall_doorway_scaffold.glb" id="7_yigrp"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="floor_tile_small_gltf" parent="." instance=ExtResource("1_suj0x")]
+
+[node name="wall_gltf" parent="." instance=ExtResource("2_ahqp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05003, 0, 0)
+
+[node name="stairs_wood_decorated_gltf" parent="." instance=ExtResource("3_lxss2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91303, 0.645065, -0.656352)
+
+[node name="wall_corner_gltf" parent="." instance=ExtResource("4_a3vq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2636, 0, 0)
+
+[node name="wall_Tsplit_gltf" parent="." instance=ExtResource("5_j6tdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73336, 0, 0)
+
+[node name="wall_open_scaffold_gltf" parent="." instance=ExtResource("6_umbcl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2062, 0, 0)
+
+[node name="wall_doorway_scaffold2" parent="." instance=ExtResource("7_yigrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1547, 0, 0)

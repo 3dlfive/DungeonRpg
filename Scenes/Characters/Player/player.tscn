@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cnvwbj1jdgxaq"]
+[gd_scene load_steps=46 format=3 uid="uid://cnvwbj1jdgxaq"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_20hlp"]
 [ext_resource type="Texture2D" uid="uid://c64gl2fh5ogsj" path="res://Assets/Sprites/Characters/Player/Running/Running_007.png" id="1_br2ub"]
@@ -99,15 +99,22 @@ _data = {
 "Move": SubResource("Animation_y71qk")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q2kmj"]
+height = 1.93324
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
+collision_layer = 2
+floor_max_angle = 1.55334
+floor_snap_length = 0.2
 script = ExtResource("1_20hlp")
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
 StateMachineNode = NodePath("StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0025
 texture_filter = 0
-texture = ExtResource("2_e0l5k")
+texture = ExtResource("2_la3vj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite3D")
@@ -134,3 +141,7 @@ speed = 9.1
 [node name="Timer" type="Timer" parent="StateMachine/DashState"]
 wait_time = 0.4
 one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.259728, 0)
+shape = SubResource("CapsuleShape3D_q2kmj")
