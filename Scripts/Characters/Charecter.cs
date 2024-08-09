@@ -7,6 +7,10 @@ public abstract partial class Character : CharacterBody3D
     [Export] public AnimationPlayer AnimPlayerNode { get; private set;}
     [Export] public Sprite3D SpriteNode { get; private set;}
     [Export] public StateMachine StateMachineNode { get; private set;}
+
+    [ExportGroup("AI Nodes")]
+    [Export] public Path3D Pathnode {get; private set;}
+
     public Vector2 direction = new();
     public void Flip()
     {

@@ -6,7 +6,7 @@ public partial class PlayerDashState : PlayerState
 
     [Export] private Timer dashTimerNode;
 
-    [Export(PropertyHint.Range,"0,20,0.1")] private float speed = 10;
+    [Export(PropertyHint.Range, "0,20,0.1")] private float speed = 10;
 
     public override void _Ready()
     {
@@ -20,20 +20,20 @@ public partial class PlayerDashState : PlayerState
     }
     protected override void EnterState()
     {
-            
-            characterNode.AnimPlayerNode.Play(GameConstants.ANIM_DASH);
-            characterNode.Velocity = new(characterNode.direction.X, 0, characterNode.direction.Y);
-            if (characterNode.Velocity == Vector3.Zero)
-            {
-                characterNode.Velocity = characterNode.SpriteNode.FlipH ? 
-                    Vector3.Left :
-                    Vector3.Right; 
-            }
 
-            characterNode.Velocity *= speed;
-            dashTimerNode.Start();
+        characterNode.AnimPlayerNode.Play(GameConstants.ANIM_DASH);
+        characterNode.Velocity = new(characterNode.direction.X, 0, characterNode.direction.Y);
+        if (characterNode.Velocity == Vector3.Zero)
+        {
+            characterNode.Velocity = characterNode.SpriteNode.FlipH ?
+                Vector3.Left :
+                Vector3.Right;
+        }
 
-      
+        characterNode.Velocity *= speed;
+        dashTimerNode.Start();
+
+
     }
 
     private void HandleDashTimeout()
